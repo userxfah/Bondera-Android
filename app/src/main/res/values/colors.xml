@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#34b9ec</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="White">#ffffff</color>
+    <color name="blue">#34b9ec</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="lines">#a8e2f8</color>
+    <color name="gray_line">#dddddd</color>
+    <color name="drop_down_uline">#737373</color>
+</resources>

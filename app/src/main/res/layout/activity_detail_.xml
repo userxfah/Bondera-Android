@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/rl_screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/White">
+
+        <RelativeLayout
+            android:id="@+id/rl_img_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/blue">
+
+            <ImageButton
+                android:id="@+id/imgbtn_back"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/blue"
+                android:src="@drawable/back_icon" />
+
+            <ImageView
+                android:id="@+id/img_logo"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/logo" />
+        </RelativeLayout>
+
+        <!--<ScrollView-->
+        <!--android:id="@+id/scrl"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_below="@+id/rl_img_logo">-->
+
+        <RelativeLayout
+            android:layout_below="@+id/rl_img_logo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/rl_first"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:orientation="horizontal"
+                    android:weightSum="5">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"
+                            android:layout_marginTop="10dp">
+
+                            <TextView
+                                android:id="@+id/txt_ttl"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:text="Total : "
+                                android:textColor="@color/blue"
+                                android:textSize="18dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txt_dis_ttl"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignBottom="@+id/txt_ttl"
+                                android:layout_alignTop="@+id/txt_ttl"
+                                android:layout_marginTop="2dp"
+                                android:layout_toRightOf="@+id/txt_ttl"
+                                android:maxLines="1"
+                                android:text="230 EGP"
+                                android:textColor="@color/black"
+                                android:textSize="16dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txt_pr_person"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txt_ttl"
+                                android:layout_marginLeft="20dp"
+                                android:text="Per person : "
+                                android:textColor="@color/blue"
+                                android:textSize="18dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txt_dis_pr_person"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignBottom="@+id/txt_pr_person"
+                                android:layout_alignTop="@+id/txt_pr_person"
+                                android:layout_below="@id/txt_ttl"
+                                android:layout_marginTop="3dp"
+                                android:layout_toRightOf="@+id/txt_pr_person"
+                                android:gravity="center_vertical"
+                                android:maxLines="1"
+                                android:text="50 EGP"
+                                android:textColor="@color/black"
+                                android:textSize="16dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txt_service"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txt_pr_person"
+                                android:layout_marginLeft="20dp"
+                                android:text="*incl. service fee %@/km"
+                                android:textColor="@color/black"
+                                android:textSize="15sp" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                    <View
+                        android:id="@+id/view_divider_number_of"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@color/lines"></View>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true">
+
+                            <RelativeLayout
+                                android:id="@+id/rl_copy"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <ImageButton
+                                    android:id="@+id/img_copy"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:background="@color/transparent"
+                                    android:src="@drawable/copy_icon" />
+
+                                <TextView
+                                    android:id="@+id/txt_copy"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignLeft="@+id/img_copy"
+                                    android:layout_alignRight="@+id/img_copy"
+                                    android:layout_below="@+id/img_copy"
+                                    android:layout_marginTop="3dp"
+                                    android:gravity="center"
+                                    android:text="Copy"
+                                    android:textColor="@color/black"
+                                    android:textSize="13sp" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:layout_toRightOf="@id/rl_copy">
+
+                                <ImageButton
+                                    android:id="@+id/img_screen_shot"
+                                    android:layout_width="45dp"
+                                    android:layout_height="47dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:background="@color/transparent"
+                                    android:src="@drawable/ic_share" />
+
+                                <TextView
+                                    android:id="@+id/txt_screenShot"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/img_screen_shot"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="1dp"
+                                    android:text="Share"
+                                    android:textColor="@color/black"
+                                    android:textSize="13sp" />
+                            </RelativeLayout>
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/view_divider_number_of1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/rl_first"
+                android:background="@color/lines"></View>
+
+
+            <RelativeLayout
+                android:id="@+id/rl_second"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view_divider_number_of1"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:id="@+id/ll_txt_total_dat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/img_num_of_people"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/number_of_people_icon" />
+
+                        <TextView
+                            android:id="@+id/txt_num_of_people_data"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/img_num_of_people"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="0000"
+                            android:textSize="17sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/img_total_distanance"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/total_distance_icon" />
+
+                        <TextView
+                            android:id="@+id/txt_total_distance_data"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/img_total_distanance"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="0000"
+                            android:textSize="17sp" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ll_txt_total_dat"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/txt_title_from"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="From"
+                        android:textAlignment="center"
+                        android:textColor="@color/blue"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txt_title_from_data"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_title_from"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="35dp"
+                        android:layout_marginRight="35dp"
+                        android:layout_marginTop="5dp"
+                        android:text="Rathaus friedrich-schmidt-platz 1, 1010 wien, austria"
+                        android:textAlignment="center"
+                        android:textColor="@color/drop_down_uline"
+                        android:textSize="19sp" />
+
+                    <TextView
+                        android:id="@+id/txt_title_to"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_title_from_data"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:text="To"
+                        android:textAlignment="center"
+                        android:textColor="@color/blue"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txt_title_to_data"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_title_to"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="35dp"
+                        android:layout_marginRight="35dp"
+                        android:layout_marginTop="5dp"
+                        android:text="Hundertwasser house kegelgasse 36-38,1030 Wien, Austria"
+                        android:textAlignment="center"
+                        android:textColor="@color/drop_down_uline"
+                        android:textSize="19sp" />
+
+                    <TextView
+                        android:id="@+id/txt_when"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_title_to_data"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:text="When?"
+                        android:textAlignment="center"
+                        android:textColor="@color/blue"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txt_when_data"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_when"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="35dp"
+                        android:layout_marginRight="35dp"
+                        android:layout_marginTop="5dp"
+                        android:text="Mon 16/07/2018 13:32 PM"
+                        android:textAlignment="center"
+                        android:textColor="@color/drop_down_uline"
+                        android:textSize="19sp" />
+
+                    <RelativeLayout
+                        android:id="@+id/rl_detail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_when_data"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp">
+
+
+                        <LinearLayout
+                            android:id="@+id/ln_first"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:weightSum="2">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_weight="1">
+
+                                <ImageView
+                                    android:id="@+id/img_consumption_rate"
+                                    android:layout_width="65dp"
+                                    android:layout_height="65dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:src="@drawable/consumption_rate_icon" />
+
+
+                                <TextView
+                                    android:id="@+id/txt_consumption_rate_data"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/img_consumption_rate"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="5dp"
+                                    android:text="0000"
+                                    android:textSize="17sp" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <ImageView
+                                    android:id="@+id/img_type_of_car"
+                                    android:layout_width="65dp"
+                                    android:layout_height="65dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:src="@drawable/type_of_car_icon" />
+
+                                <TextView
+                                    android:id="@+id/txt_type_of_car_data"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/img_type_of_car"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="5dp"
+                                    android:text="Sedar"
+                                    android:textSize="17sp" />
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+
+                            android:id="@+id/ln_second"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/ln_first"
+                            android:layout_marginTop="10dp"
+                            android:weightSum="2">
+
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <ImageView
+                                    android:id="@+id/img_type_of_gas"
+                                    android:layout_width="65dp"
+                                    android:layout_height="65dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:src="@drawable/type_of_gas_icon" />
+
+                                <TextView
+                                    android:id="@+id/txt_type_of_gas_data"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/img_type_of_gas"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="7dp"
+                                    android:text="Gas"
+                                    android:textSize="17sp" />
+                            </RelativeLayout>
+
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <ImageView
+                                    android:id="@+id/img_price_per_litrer"
+                                    android:layout_width="65dp"
+                                    android:layout_height="65dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:src="@drawable/price_per_litre" />
+
+
+                                <TextView
+                                    android:id="@+id/txt_price_per_litrer_data"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/img_price_per_litrer"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="8dp"
+                                    android:text="0000"
+                                    android:textSize="17sp" />
+                            </RelativeLayout>
+
+
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <View
+                        android:id="@+id/view_divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/rl_detail"
+                        android:layout_marginBottom="4dp"
+                        android:background="@color/blue"></View>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_last"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view_divider">
+
+                        <TextView
+                            android:id="@+id/txt_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="How do we calculate it?"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/txt_details"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txt_title"
+                            android:layout_marginBottom="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/bases_on"
+                            android:textSize="13sp" />
+                    </RelativeLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+        <!--</ScrollView>-->
+    </RelativeLayout>
+</ScrollView>

@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Bondera</string>
+    <string name="bases_on">\"Based on consumption rate, distance, price per litre we calculate the total                     cost then divide it by the number of people then we add the service fee.”</string>
+    <array name="gas">
+        <item>Regular/92</item>
+        <item>Premium/95</item>
+        <item>Diesel</item>
+    </array>
+    <array name="consumptionLiter">
+        <item>Economy - 10 L/100km</item>
+        <item>Luxury - 12 L/100km</item>
+        <item>Custom</item>
+    </array>
+    <array name="consumptionGallan">
+        <item>\t \t \t \tSelect Gallan</item>
+        <item>Economy - 2.6 G/100km</item>
+        <item>Luxury - 3.1 G/100km</item>
+        <item>Custom</item>
+    </array>
+    <array name="Currency">
+        <item>EGP</item>
+        <item>USD</item>
+        <item>EUR</item>
+        <item>INR</item>
+        <item>Dinar</item>
+        <item>Riyal</item>
+        <item>Dirham</item>
+        <item>Lira</item>
+        <item>Pound</item>
+    </array>
+    <array name="Unit">
+        <item>Liters</item>
+        <item>Gallons</item>
+    </array>
+
+    <string name="share_using">share using</string>
+
+    <integer name="send">0x00000004</integer>
+</resources>

@@ -1,0 +1,731 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+    <!--<ScrollView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentTop="true"-->
+    <!--android:scrollIndicators="none">-->
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="16dp"
+        android:visibility="visible" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/rl_img_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/blue">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+                    android:id="@+id/img_logo"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="64dp"
+                    android:layout_marginRight="120dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/logo" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <ScrollView
+            android:id="@+id/sv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_img_logo">
+
+            <RelativeLayout
+                android:id="@+id/rl_demo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/rl_mapfrag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <fragment
+                        android:id="@+id/mapView"
+                        android:name="com.google.android.gms.maps.SupportMapFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/mapView"
+                        android:layout_alignRight="@+id/mapView"
+                        android:layout_margin="8dp"
+                        android:background="@drawable/my_location_background">
+
+                        <ImageButton
+                            android:id="@+id/ib_my_location"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:background="@color/transparent"
+                            android:src="@drawable/ic_my_location" />
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/rl_mapfrag">
+
+                    <LinearLayout
+                        android:id="@+id/ln_when"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/txt_which"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="8dp"
+                                android:text="When?"
+                                android:textColor="@color/blue"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <EditText
+                                android:id="@+id/et_when"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/txt_which"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="4dp"
+                                android:clickable="true"
+                                android:focusable="false"
+                                android:hint="Jul 14,2018"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="20dp"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ln_no_people"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ln_when"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <!--android:layout_below="@+id/mapView"-->
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/txt_no_of_people"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="8dp"
+                                android:text="Number of People"
+                                android:textColor="@color/blue"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <EditText
+                                android:id="@+id/et_no_of_people"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/txt_no_of_people"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="4dp"
+                                android:hint="0"
+                                android:inputType="number"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="20dp"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
+                        </RelativeLayout>
+
+                        <View
+                            android:id="@+id/view_divider_number_of"
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="20dp"
+                            android:layout_marginTop="20dp"
+                            android:background="@color/lines"></View>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/txt_unit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="8dp"
+                                android:text="Unit"
+                                android:textAlignment="center"
+                                android:textColor="@color/blue"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <Spinner
+                                android:id="@+id/et_unit"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/txt_unit"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="4dp"
+                                android:layout_marginTop="8dp"
+                                android:entries="@array/Unit"
+                                android:hint="0000"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="20dp"
+                                android:textSize="18sp" />
+
+                            <View
+                                android:id="@+id/view_unit_underline"
+                                android:layout_width="80dp"
+                                android:layout_height="1dp"
+                                android:layout_below="@+id/et_unit"
+                                android:layout_centerHorizontal="true"
+                                android:background="@color/drop_down_uline"></View>
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/view_divide_vertical1"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/ln_no_people"
+                        android:background="@color/lines"></View>
+
+                    <LinearLayout
+                        android:id="@+id/ln_typeof_car"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view_divide_vertical1"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/txt_type_of_car"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="8dp"
+                                android:text="Type of Car"
+                                android:textColor="@color/blue"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <EditText
+                                android:id="@+id/et_type_of_car"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/txt_type_of_car"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="4dp"
+                                android:focusableInTouchMode="true"
+                                android:hint="Sedan"
+                                android:inputType="text"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="20dp"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
+                        </RelativeLayout>
+
+                        <View
+                            android:id="@+id/view_hori_vertical2"
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="20dp"
+                            android:layout_marginTop="20dp"
+                            android:background="@color/lines"></View>
+
+                        <RelativeLayout
+                            android:id="@+id/rl_divide_vertial2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/txt_type_of_gas"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="8dp"
+                                android:text="Type of Gas"
+                                android:textColor="@color/blue"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <Spinner
+                                android:id="@+id/et_type_of_gas"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/txt_type_of_gas"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="4dp"
+                                android:layout_marginTop="8dp"
+                                android:entries="@array/gas"
+                                android:hint="0000"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="20dp"
+                                android:textSize="18sp" />
+
+                            <View
+                                android:id="@+id/view_Gas_underline"
+                                android:layout_width="105dp"
+                                android:layout_height="1dp"
+                                android:layout_below="@+id/et_type_of_gas"
+                                android:layout_centerHorizontal="true"
+                                android:background="@color/drop_down_uline"></View>
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/view_divide_vertical2"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/ln_typeof_car"
+                        android:background="@color/lines"></View>
+
+                    <LinearLayout
+                        android:id="@+id/ln_price_per_liter"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view_divide_vertical2"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/txt_price_per"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="8dp"
+                                android:text="Price per Litre"
+                                android:textColor="@color/blue"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <EditText
+                                android:id="@+id/et_price_per"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/txt_price_per"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="4dp"
+                                android:hint="0"
+                                android:inputType="numberDecimal"
+                                android:maxLength="4"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="20dp"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
+                        </RelativeLayout>
+
+                        <View
+                            android:id="@+id/view_hori_vertical3"
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="20dp"
+                            android:layout_marginTop="20dp"
+                            android:background="@color/lines"></View>
+
+                        <RelativeLayout
+                            android:id="@+id/rl_divide_vertial3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/txt_currency"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="8dp"
+                                android:text="Currency"
+                                android:textColor="@color/blue"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <Spinner
+                                android:id="@+id/et_currency"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/txt_currency"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="4dp"
+                                android:layout_marginTop="8dp"
+                                android:entries="@array/Currency"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="20dp"
+                                android:textSize="18sp" />
+
+                            <View
+                                android:id="@+id/view_Currency"
+                                android:layout_width="80dp"
+                                android:layout_height="1dp"
+                                android:layout_below="@+id/et_currency"
+                                android:layout_centerHorizontal="true"
+                                android:background="@color/drop_down_uline"></View>
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/view_divide_vertical3"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/ln_price_per_liter"
+                        android:background="@color/lines"></View>
+
+                    <LinearLayout
+                        android:id="@+id/ln_service"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view_divide_vertical3"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <RelativeLayout
+                            android:id="@+id/rl_service"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/txt_Service"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="8dp"
+                                android:text="Service Fees (per KM)"
+                                android:textColor="@color/blue"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <EditText
+                                android:id="@+id/et__Service"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/txt_Service"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="4dp"
+                                android:hint="0"
+                                android:inputType="numberDecimal"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="20dp"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
+                        </RelativeLayout>
+
+                        <View
+                            android:id="@+id/view_divider_number_of4"
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="20dp"
+                            android:layout_marginTop="20dp"
+                            android:background="@color/lines"></View>
+
+                        <!--<com.example.hardik.bondera.SoftKeyboardHandled-->
+                        <!--android:id="@+id/sk"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_weight="1">-->
+                        <RelativeLayout
+                            android:id="@+id/rl_rate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/txt_Consumption_Rate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="8dp"
+                                android:text="Consumption Rate (L/100KM)"
+                                android:textAlignment="center"
+                                android:textColor="@color/blue"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <Spinner
+                                android:id="@+id/sp_liter"
+                                android:layout_width="86dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/txt_Consumption_Rate"
+                                android:layout_marginLeft="55dp"
+                                android:layout_marginRight="55dp"
+                                android:layout_marginTop="10dp"
+                                android:textAlignment="center"
+                                android:textSize="18sp"
+                                android:visibility="invisible"></Spinner>
+                            <!--android:entries="@array/consumptionLiter"-->
+
+                            <Spinner
+                                android:id="@+id/sp_gallon"
+                                android:layout_width="86dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/txt_Consumption_Rate"
+                                android:layout_marginLeft="55dp"
+                                android:layout_marginRight="55dp"
+                                android:layout_marginTop="10dp"
+                                android:textAlignment="center"
+                                android:textSize="18sp"
+                                android:visibility="invisible"></Spinner>
+
+                            <!--android:entries="@array/consumptionGallan"-->
+
+                            <EditText
+                                android:id="@+id/et_Consumption_Rate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/txt_Consumption_Rate"
+                                android:layout_centerHorizontal="true"
+                                android:focusable="false"
+                                android:hint="0"
+                                android:inputType="numberDecimal"
+                                android:keyboardNavigationCluster="false"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="20dp"
+                                android:textAlignment="center"
+                                android:textSize="18sp" />
+
+                            <EditText
+                                android:id="@+id/et_custom_cr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/txt_Consumption_Rate"
+                                android:layout_centerHorizontal="true"
+                                android:hint="0"
+                                android:inputType="numberDecimal"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="20dp"
+                                android:textAlignment="center"
+                                android:textSize="18sp"
+                                android:visibility="gone" />
+
+                        </RelativeLayout>
+                        <!--</com.example.hardik.bondera.SoftKeyboardHandled>-->
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/view_divide_vertical4"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/ln_service"
+                        android:layout_marginBottom="30dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/lines"></View>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/view_divide_vertical4">
+
+                        <Button
+                            android:id="@+id/btn_Go"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="20dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/btn_round"
+                            android:text="Go"
+                            android:textAlignment="center"
+                            android:textColor="@color/White"
+                            android:textSize="25sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+
+        </ScrollView>
+
+        <!--<ListView-->
+        <!--android:id="@+id/list_view"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignBottom="@+id/sv"-->
+        <!--android:layout_alignLeft="@+id/rl_from_to"-->
+        <!--android:layout_alignRight="@+id/rl_from_to"-->
+        <!--android:layout_below="@+id/rl_from_to"-->
+        <!--android:background="@null"-->
+        <!--android:dividerHeight="1dp"-->
+        <!--android:visibility="gone"></ListView>-->
+
+        <!--<com.google.android.gms.maps.MapView-->
+        <!--android:id="@+id/mapView"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="400dp"-->
+        <!--android:layout_below="@+id/rl_img_logo"-->
+        <!--android:background="@color/colorPrimary" />-->
+
+        <RelativeLayout
+            android:id="@+id/rl_from_to"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="55dp"
+            android:background="@drawable/relative_round">
+
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/fic_rom_to" />
+
+            <TextView
+                android:id="@+id/txt_from"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:text="From" />
+
+            <!--<EditText-->
+            <!--android:id="@+id/et_from"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/txt_from"-->
+            <!--android:layout_marginLeft="40dp"-->
+            <!--android:background="@color/transparent"-->
+            <!--android:focusableInTouchMode="true"-->
+            <!--android:hint="Some place, address, state and zip"-->
+            <!--android:paddingLeft="10dp"-->
+            <!--android:paddingTop="0dp"-->
+            <!--android:textSize="15sp" />-->
+
+            <TextView
+                android:id="@+id/et_from"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_from"
+                android:layout_marginLeft="40dp"
+                android:background="@color/transparent"
+                android:hint="Some place, address, state and zip"
+                android:paddingLeft="10dp"
+                android:paddingTop="0dp"
+                android:textSize="15sp" />
+
+            <View
+                android:id="@+id/view_divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/et_from"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/gray_line"></View>
+
+            <TextView
+                android:id="@+id/txt_to"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view_divider"
+                android:layout_marginLeft="40dp"
+                android:text="To" />
+
+            <!--<EditText-->
+            <!--android:id="@+id/et_to"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/txt_to"-->
+            <!--android:layout_marginLeft="40dp"-->
+            <!--android:background="@color/transparent"-->
+            <!--android:focusableInTouchMode="true"-->
+            <!--android:hint="Some place, address, state and zip"-->
+            <!--android:paddingBottom="0dp"-->
+            <!--android:paddingLeft="10dp"-->
+            <!--android:paddingTop="0dp"-->
+            <!--android:textColorHighlight="@color/transparent"-->
+            <!--android:textSize="15sp" />-->
+            <TextView
+                android:id="@+id/et_to"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_to"
+                android:layout_marginLeft="40dp"
+                android:background="@color/transparent"
+                android:hint="Some place, address, state and zip"
+                android:paddingBottom="0dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="0dp"
+                android:textColorHighlight="@color/transparent"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/list_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_from_to"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@null"
+            android:dividerHeight="1dp"
+            android:visibility="gone"></ListView>
+
+        <!--android:layout_alignLeft="@+id/rl_from_to"-->
+        <!--android:layout_alignRight="@+id/rl_from_to"-->
+
+        <!--<ScrollView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/mapView"-->
+        <!--android:scrollIndicators="none">-->
+
+        <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_below="@+id/mapView">-->
+
+
+    </RelativeLayout>
+    <!--</ScrollView>-->
+    <!--</RelativeLayout>-->
+    <!--</ScrollView>-->
+
+</RelativeLayout>
